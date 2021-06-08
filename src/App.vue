@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ckeditor value="Hello, World!"></ckeditor>
+    <router-view />
   </div>
 </template>
 
