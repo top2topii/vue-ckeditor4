@@ -1,25 +1,20 @@
 <template>
   <div>
-    <ckeditor value="Write your post" :config="editor_config"></ckeditor>
+    <Ckeditor4></Ckeditor4>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import CKEditor from 'ckeditor4-vue';
-
-Vue.use(CKEditor);
+import Ckeditor4 from '@/components/Ckeditor4'
 
 export default {
   name: "Editor",
-  data() {
-    return {
-      editor_cofig: {
-        uiColor: '#AADC6E',
-      }
-    }
+  components: {
+    Ckeditor4
   }
 }
+
+
 </script>
 
 <style>
