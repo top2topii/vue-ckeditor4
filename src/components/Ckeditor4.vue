@@ -17,8 +17,8 @@ export default {
       cke4_config: {
         language: 'en',
         uiColor: '#aad5f0',
-        filebrowserBrowseUrl: '/browser/browse.php',
-        filebrowserImageUploadUrl: '/browser/upload.php'
+        filebrowserBrowseUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
+        filebrowerImageUploadUrl: 'http://localhost:8000/filemanager/dialog.php?type=2&editor=ckeditor'
       }
     }
   }
