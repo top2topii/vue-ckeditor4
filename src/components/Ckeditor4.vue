@@ -17,14 +17,36 @@ export default {
       cke4_config: {
         language: 'en',
         uiColor: '#aad5f0',
-        filebrowserBrowseUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
-        filebrowerImageUploadUrl: 'http://localhost:8000/filemanager/dialog.php?type=2&editor=ckeditor'
+        toolbarGroups: [
+          { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+          { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+          { name: 'links' },
+          { name: 'insert' },
+          { name: 'forms' },
+          { name: 'tools' },
+          { name: 'document',       groups: [ 'mode', 'document', 'doctools' ] },
+          { name: 'others' },
+          '/',
+          { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+          { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+          { name: 'styles' },
+          { name: 'colors' },
+          { name: 'about' }
+        ],
+        format_tags: 'p;h1;h2;h3;pre',
+        removeButtons: 'Underline,Subscript,Superscript',
+        removeDialogTabs: 'image:advanced;link:advanced',
+        filebrowserImageBrowseUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
+        filebrowerImageUploadUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor'
       }
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+cke_dialog_tab {
+  display: none;
+}
 
 </style>
