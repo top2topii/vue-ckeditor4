@@ -1,12 +1,14 @@
 <template>
   <div>
-    <ckeditor value="Write your story" :config="cke4_config"></ckeditor>
+    <ckeditor v-model="cke4_data" :config="cke4_config"></ckeditor>
+    <button @click="saveContent()">Save Content</button>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import CKEditor from 'ckeditor4-vue';
+// import { component } from 'vue/types/umd';
 
 Vue.use(CKEditor);
 
@@ -14,6 +16,7 @@ export default {
   name: "Ckeditor4",
   data() {
     return {
+      cke4_data: '<p>Content of the editor.</p>',
       cke4_config: {
         language: 'en',
         uiColor: '#aad5f0',
@@ -36,9 +39,15 @@ export default {
         format_tags: 'p;h1;h2;h3;pre',
         removeButtons: 'Underline,Subscript,Superscript',
         removeDialogTabs: 'image:advanced;link:advanced',
-        filebrowserImageBrowseUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
-        filebrowerImageUploadUrl: 'http://localhost:8000/filemanager/dialog.php?type=1&editor=ckeditor'
+        filebrowserImageBrowseUrl: '/rfm/filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
+        filebrowerImageUploadUrl: '/rfm/filemanager/dialog.php?type=1&editor=ckeditor'
       }
+    }
+  },
+  methods: {
+    saveContent() {
+      // let content = component.instance.getData();
+      console.log(this.cke4_data);
     }
   }
 }
